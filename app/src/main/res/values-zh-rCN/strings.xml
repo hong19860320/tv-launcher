@@ -1,0 +1,9 @@
+<resources>
+	<string name="app_name">ATV 启动器</string>
+	<string name="settings">设置</string>
+    <string name="channel_watch_next">观看一下个频道</string>
+	<string name="channel_preview">%1$s: %2$s</string>
+    <string name="settings_system">系统设置</string>
+	<string name="settings_launcher">启动器设置</string>
+	<string name="input_switch">切换输入源</string>
+</resources>

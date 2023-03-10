@@ -2,6 +2,7 @@ package nl.ndat.tvlauncher
 
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.lifecycleScope
@@ -36,6 +37,20 @@ class LauncherActivity : ComponentActivity() {
 
 		if (checkCallingOrSelfPermission(TvContractCompat.PERMISSION_READ_TV_LISTINGS) != PackageManager.PERMISSION_GRANTED)
 			requestPermissions(arrayOf(TvContractCompat.PERMISSION_READ_TV_LISTINGS), 0)
+	}
+
+	override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			return true
+		}
+		return super.onKeyDown(keyCode, event)
+	}
+
+	override fun onKeyUp(keyCode: Int, event: KeyEvent?): Boolean {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			return true
+		}
+		return super.onKeyUp(keyCode, event)
 	}
 
 	private fun validateDefaultLauncher() {
